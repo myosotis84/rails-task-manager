@@ -1,19 +1,20 @@
-<header>
-    <h1>
-        <%= @task.title %>
-        <%= link_to 'Edit this task', edit_task_path(@task), class: "btn btn-primary" %>
-</header>
-<div>
-    <%= @task.details %>
-</div>
-<div>
-    <% if @task.completed %>
-    <i class="far fa-check-square"></i> This task is completed
-    <% else %>
-    <i class="far fa-square"></i> This task is not completed yet
+<div class="content">
+<header><h1><%= @task.title %></h1>
+  <p>
+    <%= link_to edit_task_path(@task), class: "btn btn-primary" do %>
+      <i class="fas fa-pencil-alt"></i> Edit this task
     <% end %>
-</div>
+  </p>
+</header>
+
+<p><%= @task.details %></p>
 <p>
-    <%= link_to 'Back to list', tasks_path %>
+  <% if @task.completed %>
+    <i class="far fa-check-square"></i> This task is completed
+  <% else %>
+    <i class="far fa-square"></i> This task is not completed yet
+  <% end %>
 </p>
-<!-- </h1><i class="fas fa-pencil-alt"></i> -->
+
+<p><%= link_to 'Back to list', tasks_path %></p>
+</div>

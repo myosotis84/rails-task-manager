@@ -1,3 +1,4 @@
+<div class="content">
 <h1>My tasks</h1>
 <ul>
   <% @tasks.each do |task| %>
@@ -16,4 +17,10 @@
   <% end %>
 </ul>
 
-<p><i class="fas fa-plus"> </i><%= link_to 'Add a new task', new_task_path %></p>
+<p>
+  <%= link_to new_task_path do %>
+    <i class="fas fa-plus"></i> Add a new task
+  <% end %>
+</p>
+
+</div>
